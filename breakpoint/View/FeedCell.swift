@@ -9,16 +9,22 @@
 import UIKit
 
 class FeedCell: UITableViewCell {
-
+    @IBOutlet weak var UserImg: UIImageView!
+    @IBOutlet weak var UsrAccLbl: UILabel!
+    
+    @IBOutlet weak var MessgLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setCellLayout(Img : UIImage? , name : String ,forMessage content : String)
+    {
+        if Img != nil {
+            UserImg.image = Img
+        }
+        UsrAccLbl.text = name
+        MessgLbl.text = content
     }
 
 }
